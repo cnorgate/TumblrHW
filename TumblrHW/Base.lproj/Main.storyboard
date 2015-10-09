@@ -159,7 +159,7 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Tcf-XW-bNi" userLabel="Home">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="homeViewController" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Tcf-XW-bNi" userLabel="Home">
                                         <rect key="frame" x="15" y="6" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="home_icon"/>
@@ -169,7 +169,7 @@
                                             <action selector="onHomeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qky-WJ-mvR"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="BJl-jR-2XS" userLabel="Search">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="BJl-jR-2XS" userLabel="Search">
                                         <rect key="frame" x="75" y="6" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="search_icon"/>
@@ -179,7 +179,7 @@
                                             <action selector="onSearchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tiy-NF-rQr"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="0g4-Qv-lbd" userLabel="Compose">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="0g4-Qv-lbd" userLabel="Compose">
                                         <rect key="frame" x="135" y="6" width="50" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="compose_button"/>
@@ -187,7 +187,7 @@
                                             <action selector="onComposeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iso-58-nSG"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="b47-XS-Oek" userLabel="Account">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="b47-XS-Oek" userLabel="Account">
                                         <rect key="frame" x="210" y="6" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="account_icon"/>
@@ -197,7 +197,7 @@
                                             <action selector="onAccountButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="28Y-he-FIq"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="zNH-eH-EN8" userLabel="Trending">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="zNH-eH-EN8" userLabel="Trending">
                                         <rect key="frame" x="265" y="6" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="trending_icon"/>
@@ -220,6 +220,11 @@
                         <outlet property="homeButton" destination="Tcf-XW-bNi" id="iyk-4w-h2m"/>
                         <outlet property="searchButton" destination="BJl-jR-2XS" id="5Jt-Cf-HSj"/>
                         <outlet property="trendingButton" destination="zNH-eH-EN8" id="6fF-r9-ZYl"/>
+                        <outletCollection property="buttons" destination="Tcf-XW-bNi" collectionClass="NSMutableArray" id="0ky-3U-uKf"/>
+                        <outletCollection property="buttons" destination="BJl-jR-2XS" collectionClass="NSMutableArray" id="qzH-9H-c7d"/>
+                        <outletCollection property="buttons" destination="0g4-Qv-lbd" collectionClass="NSMutableArray" id="xd7-DP-m4r"/>
+                        <outletCollection property="buttons" destination="b47-XS-Oek" collectionClass="NSMutableArray" id="gqo-Sa-F61"/>
+                        <outletCollection property="buttons" destination="zNH-eH-EN8" collectionClass="NSMutableArray" id="7su-y3-wPa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
