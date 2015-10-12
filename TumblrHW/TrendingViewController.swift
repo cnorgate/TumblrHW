@@ -10,8 +10,22 @@ import UIKit
 
 class TrendingViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //scrollView.contentSize = CGSize(width: 320, height: 1000)
+        //scrollView.contentSize = CGSize(width: 320, height: message.center.y + feed.center.y + 560)
+        scrollView.contentSize = imageView.image!.size
 
         // Do any additional setup after loading the view.
     }

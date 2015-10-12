@@ -73,24 +73,6 @@ class TabBarViewController: UIViewController {
     
     
     
-    //Function to remove the highlight of all buttons, before adding it back
-    func unhighlight() {
-        homeButton.selected = false
-        searchButton.selected = false
-        composeButton.selected = false
-        accountButton.selected = false
-        trendingButton.selected = false
-    }
-    
-    func removeViewController(){
-        if currentViewController != nil {
-            currentViewController.willMoveToParentViewController(nil)
-            currentViewController.view.removeFromSuperview()
-            currentViewController.removeFromParentViewController()
-        }
-    }
-    
-    
     
     
     
@@ -122,74 +104,19 @@ class TabBarViewController: UIViewController {
         addChildViewController(vc)
         contentView.addSubview(vc.view)
         vc.didMoveToParentViewController(self)
-        
-        // Code to know if any view controller is set
-        //currentViewController = homeViewController
-        
-        
+
         // In case clipping subviews doesn't work
-        // homeViewController.view.frame = contentView.bounds
+        vc.view.frame = contentView.bounds
+        
     }
     
-    @IBAction func onSearchButton(button: UIButton) {
-        unhighlight()
-        removeViewController()
-        
-        button.selected = true
-        
-        addChildViewController(searchViewController)
-        contentView.addSubview(searchViewController.view)
-        searchViewController.didMoveToParentViewController(self)
-        
-        // Code to know if any view controller is set
-        currentViewController = searchViewController
-
-    }
     
-    @IBAction func onComposeButton(button: UIButton) {
-        unhighlight()
-        removeViewController()
-        
-        button.selected = true
-        
-        addChildViewController(composeViewController)
-        contentView.addSubview(composeViewController.view)
-        composeViewController.didMoveToParentViewController(self)
-        
-        // Code to know if any view controller is set
-        currentViewController = composeViewController
-
-    }
     
-    @IBAction func onAccountButton(button: UIButton) {
-        unhighlight()
-        removeViewController()
-        
-        button.selected = true
-        
-        addChildViewController(accountViewController)
-        contentView.addSubview(accountViewController.view)
-        accountViewController.didMoveToParentViewController(self)
-        
-        // Code to know if any view controller is set
-        currentViewController = accountViewController
-
-    }
     
-    @IBAction func onTrendingButton(button: UIButton) {
-        unhighlight()
-        removeViewController()
-        
-        button.selected = true
-        
-        addChildViewController(trendingViewController)
-        contentView.addSubview(trendingViewController.view)
-        trendingViewController.didMoveToParentViewController(self)
-        
-        // Code to know if any view controller is set
-        currentViewController = trendingViewController
-
-    }
+    
+    
+    
+    
     
     
     
