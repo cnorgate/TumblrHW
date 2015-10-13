@@ -37,6 +37,10 @@ class TabBarViewController: UIViewController {
     var currentViewController: UIViewController!
     
     
+    @IBOutlet weak var exploreTab: UIImageView!
+    var exploreTabOrigin: CGPoint!  
+    
+    
     
     
     
@@ -54,8 +58,13 @@ class TabBarViewController: UIViewController {
         // Add the view controllers to the array
         viewControllers = [homeViewController, searchViewController, composeViewController, accountViewController,  trendingViewController]
 
+        //Get the origin of the explore tab
+        exploreTabOrigin = exploreTab.center
+        
         buttons[selectedIndex].selected = true
         onHomeButton(buttons[selectedIndex])
+        
+
         
         // Do any additional setup after loading the view.
     }
@@ -107,6 +116,23 @@ class TabBarViewController: UIViewController {
 
         // In case clipping subviews doesn't work
         vc.view.frame = contentView.bounds
+        
+        
+        
+        //manage teh explore tap icon
+        var elements = [1,4]
+        
+        if elements.contains(selectedIndex) {
+            exploreTab.alpha = 0
+        }   else {
+            exploreTab.alpha = 1
+        }
+        
+        UIView.animateWithDuration(1, delay: 0, options: [UIViewAnimationOptions.Autoreverse, UIViewAnimationOptions.Repeat], animations: { () -> Void in
+            self.exploreTab.center = CGPoint(x: self.exploreTabOrigin.x, y: self.exploreTabOrigin.y - 5)
+            }) { (completed) -> Void in
+                //Nothing
+        }
         
     }
     
